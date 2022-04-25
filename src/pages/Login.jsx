@@ -23,7 +23,7 @@ export default function Login() {
     }
 
     return (
-        <div>
+        <div className = 'main'>
             <h1>Login</h1>
             <div id = 'loginForm'>
                 <h2><a href = '/register'>Create an Account</a></h2>
