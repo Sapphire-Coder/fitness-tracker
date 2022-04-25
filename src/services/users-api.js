@@ -1,4 +1,5 @@
 import axios from 'axios'
+import authHeader from './auth-header'
 
 const URL = 'http://localhost:3001/users/'
 
@@ -14,4 +15,8 @@ export const loginUser = loginAttempt => {
         }
         return res.data
     })    
+}
+
+export const findUser = () => {
+    return axios.get(`${URL}user`, { headers: authHeader() })
 }
