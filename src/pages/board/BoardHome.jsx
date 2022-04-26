@@ -24,7 +24,7 @@ export default function BoardHome() {
                     data.map((post, i) => {
                         return(
                             <div key = {i}>
-                                <h2><a href = {`/board/${post._id}`}>{post.name}</a></h2>
+                                <h2><a href = {`/board/${post._id}`}>{post.title}</a></h2>
                             </div>
                         )
                     })

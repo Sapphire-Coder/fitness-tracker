@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import New from './pages/New'
 import UserWorkouts from './pages/UserWorkouts'
 import BoardHome from './pages/board/BoardHome'
+import BoardNew from './pages/board/BoardNew'
 
 const App = () => {
     
@@ -33,7 +34,7 @@ const App = () => {
                 {/* <Route path = '/new' element = { <New /> } /> */}
                 <Route path = '/board' element = { <BoardHome /> } />
                 <Route path = '/board/:id' />
-                <Route path = '/board/new' />
+                <Route path = '/board/new' element = { <BoardNew /> } />
                 <Route path = '/board/:id/edit' />
                 <Route path = '/register' element = { <Register /> } />
             </Routes>
