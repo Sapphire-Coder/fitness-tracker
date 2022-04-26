@@ -13,6 +13,9 @@ export default function Login() {
             if(JSON.parse(localStorage.isAuth) && !loading) {
                 navigate('/')
             }
+            else{
+                if(JSON.parse(localStorage.isAuth)) navigate('/')
+            }
         }
     }, [loading])
 
