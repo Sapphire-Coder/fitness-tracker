@@ -1,5 +1,6 @@
 import authHeader from './auth-header'
 import axios from 'axios'
+
 const URL = 'http://localhost:3001/workouts'
 
 export const getWorkouts = () => {
@@ -11,7 +12,7 @@ export const getWorkout = id => {
 }
 
 export const deleteWorkout = id => {
-    return axios.get(`${URL}${id}`, { headers: authHeader() })
+    return axios.delete(`${URL}${id}`, { headers: authHeader() })
 }
 
 export const createWorkout = createdWorkout => {

@@ -26,14 +26,15 @@ export default function UserWorkouts() {
                                     workout.exercises.map((exercise, j) => {
                                         return (
                                             <div key = {j}>
-                                                <h2>Name: {exercise.name}</h2>
-                                                <h2>Reps: {exercise.reps}</h2>
-                                                <h2>Sets: {exercise.sets}</h2>
+                                                <h3>Exercise: {exercise.name}</h3>
+                                                <h3>Reps: {exercise.reps}</h3>
+                                                <h3>Sets: {exercise.sets}</h3>
                                             </div>
                                         )
 
                                     })
                                 }
+                                <h3>Calories: {workout.calories}</h3>
                             </div>
                         )
                     })

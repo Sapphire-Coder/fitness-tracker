@@ -5,9 +5,16 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import New from './pages/New'
 import UserWorkouts from './pages/UserWorkouts'
+import BoardHome from './pages/board/BoardHome'
 
 const App = () => {
     
+    const logout = e => {
+        e.preventDefault()
+        localStorage.clear()
+        window.location.reload()
+    }
+
     return (
         <Router>
             {localStorage.isAuth && JSON.parse(localStorage.isAuth) === true ? (
@@ -15,6 +22,7 @@ const App = () => {
                     <Link to = '/'>Home </Link>
                     <Link to = '/workouts'>Workouts </Link>
                     <Link to = '/board'>Workout Board </Link>
+                    <button onClick={logout}>Logout</button>
                 </nav>   
             ) : null }
             <Routes>
@@ -23,6 +31,7 @@ const App = () => {
                 <Route path = '/new' element = { <New /> } />
                 <Route path = '/workouts' element = { <UserWorkouts /> } />
                 {/* <Route path = '/new' element = { <New /> } /> */}
+                <Route path = '/board' element = { <BoardHome /> } />
                 <Route path = '/board/:id' />
                 <Route path = '/board/new' />
                 <Route path = '/board/:id/edit' />
