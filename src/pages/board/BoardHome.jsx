@@ -15,10 +15,8 @@ export default function BoardHome() {
 
     return (
         <div className = 'main'>
-            <nav>
-                <h3><a href = '/board/new'>Create Post</a></h3>
-            </nav>
             <h1>Workout Board</h1>
+            <h3><a href = '/board/new'>Create Post</a></h3>
             <div id = 'boardContainer'>
                 {
                     data.map((post, i) => {
