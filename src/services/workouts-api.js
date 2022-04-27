@@ -1,7 +1,7 @@
 import authHeader from './auth-header'
 import axios from 'axios'
 
-const URL = 'http://localhost:3001/workouts'
+const URL = 'http://localhost:3001/workouts/'
 
 export const getWorkouts = () => {
     return axios.get(URL, { headers: authHeader() })

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getWorkouts } from '../services/workouts-api'
 import { useNavigate } from 'react-router-dom'
-
+import { deleteWorkout } from '../services/workouts-api'
 
 export default function UserWorkouts() {
 
@@ -35,6 +35,7 @@ export default function UserWorkouts() {
                                     })
                                 }
                                 <h3>Calories: {workout.calories}</h3>
+                                <button onClick = {() => deleteWorkout(workout._id)}>Delete Workout</button>
                             </div>
                         )
                     })
