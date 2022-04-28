@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getComments, createComment, deleteComment } from '../../services/comments-api'
-import { getPost } from '../../services/posts-api'
+import { deletePost, getPost } from '../../services/posts-api'
 import { findUser } from '../../services/users-api'
 
 export default function BoardShow() {
@@ -26,6 +26,12 @@ export default function BoardShow() {
         e.target.comment.value = null
     }
 
+    const delPost = e => {
+        e.preventDefault()
+        deletePost(data._id)
+        navigate('/board')
+    }
+
     return (
         <div className='main'>
             <div id = 'post'>
@@ -37,6 +43,7 @@ export default function BoardShow() {
                     user == data.user && (
                         <div id = 'editBtn'>
                             <button onClick = {() => navigate(`/board/${id}/edit`)}>Edit Post</button>
+                            <button onClick = {delPost}>Delete Post</button>
                         </div>
                     )
                 }
