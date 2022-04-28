@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getComments, createComment } from '../../services/comments-api'
+import { getComments, createComment, deleteComment } from '../../services/comments-api'
 import { getPost } from '../../services/posts-api'
+import { findUser } from '../../services/users-api'
 
 export default function BoardShow() {
 
@@ -9,11 +10,13 @@ export default function BoardShow() {
     const { id } = useParams()
     const [data, setData] = useState({})
     const [comments, setComments] = useState([])
+    const [user, setUser] = useState({})
 
     useEffect(() => {
         if(!localStorage.isAuth || JSON.parse(localStorage.isAuth) == false) navigate('/login')
         getPost(id).then(res => setData(res.data))
         getComments(id).then(res => setComments(res.data))
+        findUser().then(res => setUser(res.data._id))
     }, [])
 
     const addComment = e => {
@@ -43,6 +46,9 @@ export default function BoardShow() {
                                 <h3>{comment.username}</h3>
                                 <p style={{textDecorationLine: 'underline'}}>Comment:</p>
                                 <p>{comment.comment}</p>
+                                {
+                                    user == comment.user && <button onClick = {() => deleteComment(comment._id)}>Delete Comment</button> 
+                                }
                             </div>
                         )
                     })

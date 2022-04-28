@@ -38,7 +38,7 @@ const App = () => {
                 <Route path = '/board' element = { <BoardHome /> } />
                 <Route path = '/board/:id' element = { <BoardShow /> } />
                 <Route path = '/board/new' element = { <BoardNew /> } />
-                <Route path = '/board/:id/edit' element = { <Edit /> } />
+                <Route path = '/board/:id/edit' />
                 <Route path = '/register' element = { <Register /> } />
             </Routes>
         </Router>
