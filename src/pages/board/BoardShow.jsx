@@ -33,9 +33,13 @@ export default function BoardShow() {
                 <div id = 'context'>
                     <h3>{data.content}</h3>
                 </div>
-                <div id = 'editBtn'>
-                   <button onClick = {() => navigate(`/board/${id}/edit`)}>Edit Post</button>
-                </div>
+                {
+                    user == data.user && (
+                        <div id = 'editBtn'>
+                            <button onClick = {() => navigate(`/board/${id}/edit`)}>Edit Post</button>
+                        </div>
+                    )
+                }
             </div>
             <div id = 'commentSection'>
                 {
