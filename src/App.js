@@ -8,6 +8,7 @@ import UserWorkouts from './pages/UserWorkouts'
 import BoardHome from './pages/board/BoardHome'
 import BoardNew from './pages/board/BoardNew'
 import BoardShow from './pages/board/BoardShow'
+import Edit from './pages/Edit'
 
 const App = () => {
     
@@ -32,11 +33,12 @@ const App = () => {
                 <Route path = '/login' element = { <Login /> } />
                 <Route path = '/new' element = { <New /> } />
                 <Route path = '/workouts' element = { <UserWorkouts /> } />
+                <Route path = '/edit/:id' element = { <Edit /> } />
                 {/* <Route path = '/new' element = { <New /> } /> */}
                 <Route path = '/board' element = { <BoardHome /> } />
                 <Route path = '/board/:id' element = { <BoardShow /> } />
                 <Route path = '/board/new' element = { <BoardNew /> } />
-                <Route path = '/board/:id/edit' />
+                <Route path = '/board/:id/edit' element = { <Edit /> } />
                 <Route path = '/register' element = { <Register /> } />
             </Routes>
         </Router>

@@ -1,20 +1,31 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { createWorkout } from '../services/workouts-api'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { getWorkout, updateWorkout } from '../services/workouts-api'
 import NewForm from '../components/NewForm'
+import EditForm from '../components/EditForm'
 
-export default function New() {
+export default function Edit() {
 
     const navigate = useNavigate()
-
-    const [forms, setForms] = useState([<NewForm />])
+    const { id } = useParams()
+    const [data, setData] = useState({})
+    const [forms, setForms] = useState([])
 
     useEffect(() => {
         if(!localStorage.isAuth || JSON.parse(localStorage.isAuth) == false) navigate('/login')
+        getWorkout(id).then(res => {
+            setData(res.data)
+
+            const exercises = []
+            res.data.exercises.map(exercise => {
+                exercises.push(<EditForm exercise = {exercise} />)
+            })
+
+            setForms(exercises)
+        })
     }, [])
 
-    const newWorkout = e => {
-        
+    const updWorkout = e => {
         e.preventDefault()
 
         const exercises = []
@@ -41,9 +52,7 @@ export default function New() {
             calories: e.target.calories.value
         }
         
-        console.log(exercises)
-        createWorkout(workout)
-        navigate('/')
+        updateWorkout(id, workout).then(navigate('/workouts'))
     }
 
     const addForm = e => {
@@ -54,14 +63,14 @@ export default function New() {
     return (
         <div className = 'main'>
             <div>
-                <form id = 'userWorkout' onSubmit = {newWorkout}>
+                <form id = 'editWorkout' onSubmit = {updWorkout}>
                     {
                         forms.map(form => {
                             return form
                         })
                     }
                     <label>Calories: </label>
-                    <input type = 'number' name = 'calories' min = '0'/>
+                    <input type = 'number' name = 'calories' min = '0' defaultValue = {data.calories}/>
                     <button onClick={addForm}>Add Exercise</button>
                     <input type = 'submit' />
                 </form>

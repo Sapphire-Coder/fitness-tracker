@@ -36,6 +36,7 @@ export default function UserWorkouts() {
                                 }
                                 <h3>Calories: {workout.calories}</h3>
                                 <button onClick = {() => deleteWorkout(workout._id)}>Delete Workout</button>
+                                <button onClick = {() => navigate(`/edit/${workout._id}`)}>Edit Workout</button>
                             </div>
                         )
                     })
