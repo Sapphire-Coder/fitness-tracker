@@ -2,7 +2,6 @@ const EditForm = props => {
 
     const { exercise } = props
 
-    console.log(exercise)
     return (
         <>
             <label>Exercise: </label>

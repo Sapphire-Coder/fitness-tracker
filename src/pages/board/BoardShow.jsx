@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { getComments, createComment, deleteComment } from '../../services/comments-api'
 import { deletePost, getPost } from '../../services/posts-api'
 import { findUser } from '../../services/users-api'
+import { createWorkout } from '../../services/workouts-api'
 
 export default function BoardShow() {
 
@@ -37,13 +38,70 @@ export default function BoardShow() {
         e.target.comment.value = null
     }
 
+    const newWorkout = e => {
+        
+        e.preventDefault()
+
+        const exercises = []
+
+        const len = document.querySelectorAll('.exercise').length
+        const postExercises = document.querySelectorAll('.exercise')
+        const postReps = document.querySelectorAll('.reps')
+        const postSets = document.querySelectorAll('.sets')
+
+        if(len > 0) {
+            for(let i = 0; i < len; i++) {
+                exercises.push({
+                    name: postExercises[i].childNodes[1].nodeValue,
+                    reps: postReps[i].childNodes[1].nodeValue,
+                    sets: postSets[i].childNodes[1].nodeValue
+                })
+            }
+        }
+        else {
+            console.log('I went here instead')
+            exercises.push({
+                name: postExercises.childNodes[1].nodeValue,
+                reps: postReps.childNodes[1].nodeValue,
+                sets: postSets.childNodes[1].nodeValue
+            })
+        }
+
+        const workout = {
+            exercises: exercises,
+            calories: document.querySelector('#calories').childNodes[1].nodeValue
+        }
+        
+        // console.log(workout)
+        createWorkout(workout)
+        console.log('workout saved?')
+        // const test = document.querySelectorAll('.exercise')
+        // const len = test.length
+        // for(let i = 0; i < len; i++) (
+        //     console.log(test[i].childNodes[1])
+        // )
+
+        // const test1 = document.querySelectorAll('.reps')
+        // const len1 = test.length
+        // for(let i = 0; i < len1; i++) (
+        //     console.log(test1[i].childNodes[1])
+        // )
+
+        // const test2 = document.querySelectorAll('.sets')
+        // const len2 = test.length
+        // for(let i = 0; i < len2; i++) (
+        //     console.log(test2[i].childNodes[1])
+        // )
+
+        // console.log(document.querySelector('#calories').childNodes[1])
+        // console.log(document.querySelectorAll('.exercise'))
+    }
+
     const delPost = e => {
         e.preventDefault()
         deletePost(data._id)
         navigate('/board')
     }
-
-    console.log(calories)
 
     return (
         <div className='main'>
@@ -53,20 +111,21 @@ export default function BoardShow() {
                     exercises.map((exercise, i) => {
                         return (
                             <div key = {i}>
-                                <h3>Exercise: {exercise.name}</h3>
-                                <h3>Reps: {exercise.reps}</h3>
-                                <h3>Sets: {exercise.sets}</h3>
+                                <h3 className = 'exercise'>Exercise: {exercise.name}</h3>
+                                <h3 className = 'reps'>Reps: {exercise.reps}</h3>
+                                <h3 className = 'sets'>Sets: {exercise.sets}</h3>
                             </div>
                         )
                     })
                 }
-                <h3>Calories: {calories}</h3>
+                <h3 id = 'calories'>Calories: {calories}</h3>
                 <div id = 'context'>
                     <h3>{data.content}</h3>
+                    <button onClick = {newWorkout}>Add Workout</button>
                 </div>
                 {
                     user == data.user && (
-                        <div id = 'editBtn'>
+                        <div>
                             <button onClick = {() => navigate(`/board/${id}/edit`)}>Edit Post</button>
                             <button onClick = {delPost}>Delete Post</button>
                         </div>

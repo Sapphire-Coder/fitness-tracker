@@ -9,6 +9,7 @@ import BoardHome from './pages/board/BoardHome'
 import BoardNew from './pages/board/BoardNew'
 import BoardShow from './pages/board/BoardShow'
 import Edit from './pages/Edit'
+import BoardEdit from './pages/board/BoardEdit'
 
 const App = () => {
     
@@ -38,7 +39,7 @@ const App = () => {
                 <Route path = '/board' element = { <BoardHome /> } />
                 <Route path = '/board/:id' element = { <BoardShow /> } />
                 <Route path = '/board/new' element = { <BoardNew /> } />
-                <Route path = '/board/:id/edit' />
+                <Route path = '/board/:id/edit' element = { <BoardEdit /> } />
                 <Route path = '/register' element = { <Register /> } />
             </Routes>
         </Router>
