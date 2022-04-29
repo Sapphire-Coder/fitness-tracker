@@ -18,11 +18,11 @@ export default function Register() {
             <div id = 'createForm'>
                 <form onSubmit={newAcc}>
                     <label>Username: </label>
-                    <input type = 'text' name = 'username' />
+                    <input type = 'text' name = 'username' required />
                     <label>Password: </label>
-                    <input type = 'password' name = 'password' />
+                    <input type = 'password' name = 'password' required />
                     <label>Name: </label>
-                    <input type = 'text' name = 'name' />
+                    <input type = 'text' name = 'name' required />
                     <input type = 'submit' />
                 </form>
             </div>

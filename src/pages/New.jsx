@@ -61,7 +61,7 @@ export default function New() {
                         })
                     }
                     <label>Calories: </label>
-                    <input type = 'number' name = 'calories' min = '0'/>
+                    <input type = 'number' name = 'calories' min = '0' required/>
                     <button onClick={addForm}>Add Exercise</button>
                     <input type = 'submit' />
                 </form>

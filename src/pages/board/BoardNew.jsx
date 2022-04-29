@@ -27,9 +27,9 @@ export default function BoardNew() {
             <div id = 'newPostForm'>
                 <form onSubmit = {newPost}>
                     <label>Title: </label>
-                    <input type = 'text' name = 'title' />
+                    <input type = 'text' name = 'title' required />
                     <label>Post: </label>
-                    <textarea name = 'content' cols = '80' rows = '20'></textarea>
+                    <textarea name = 'content' cols = '80' rows = '20' required ></textarea>
                     <input type = 'submit'/>
                 </form>
             </div>

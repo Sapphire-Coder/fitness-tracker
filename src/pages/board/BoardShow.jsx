@@ -11,18 +11,23 @@ export default function BoardShow() {
     const [data, setData] = useState({})
     const [comments, setComments] = useState([])
     const [user, setUser] = useState({})
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         if(!localStorage.isAuth || JSON.parse(localStorage.isAuth) == false) navigate('/login')
         getPost(id).then(res => setData(res.data))
-        getComments(id).then(res => setComments(res.data))
         findUser().then(res => setUser(res.data._id))
     }, [])
 
+    useEffect(() => {
+        getComments(id).then(res => setComments(res.data))
+    }, [loading])
+
     const addComment = e => {
         e.preventDefault()
+        setLoading(true)
         const comment = { post: id, comment: e.target.comment.value }
-        createComment(comment)
+        createComment(comment).then(() => setLoading(false))
         e.target.comment.value = null
     }
 
@@ -58,7 +63,11 @@ export default function BoardShow() {
                                 <p style={{textDecorationLine: 'underline'}}>Comment:</p>
                                 <p>{comment.comment}</p>
                                 {
-                                    user == comment.user && <button onClick = {() => deleteComment(comment._id)}>Delete Comment</button> 
+                                    user == comment.user && <button onClick = {e => {
+                                        e.preventDefault()
+                                        setLoading(true)
+                                        deleteComment(comment._id).then(() => setLoading(false))
+                                    }}>Delete Comment</button> 
                                 }
                             </div>
                         )
@@ -67,7 +76,7 @@ export default function BoardShow() {
                 <div id = 'commentBox'>
                     <form onSubmit={addComment}>
                         <label>Add Comment: </label>
-                        <textarea name = 'comment' cols = '40' rows = '10'></textarea>
+                        <textarea name = 'comment' cols = '40' rows = '10' required ></textarea>
                         <input type = 'submit'/>
                     </form>
                 </div>
