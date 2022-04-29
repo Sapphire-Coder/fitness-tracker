@@ -72,29 +72,8 @@ export default function BoardShow() {
             calories: document.querySelector('#calories').childNodes[1].nodeValue
         }
         
-        // console.log(workout)
         createWorkout(workout)
-        console.log('workout saved?')
-        // const test = document.querySelectorAll('.exercise')
-        // const len = test.length
-        // for(let i = 0; i < len; i++) (
-        //     console.log(test[i].childNodes[1])
-        // )
-
-        // const test1 = document.querySelectorAll('.reps')
-        // const len1 = test.length
-        // for(let i = 0; i < len1; i++) (
-        //     console.log(test1[i].childNodes[1])
-        // )
-
-        // const test2 = document.querySelectorAll('.sets')
-        // const len2 = test.length
-        // for(let i = 0; i < len2; i++) (
-        //     console.log(test2[i].childNodes[1])
-        // )
-
-        // console.log(document.querySelector('#calories').childNodes[1])
-        // console.log(document.querySelectorAll('.exercise'))
+        alert('Workout Saved!')
     }
 
     const delPost = e => {

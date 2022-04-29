@@ -31,7 +31,6 @@ export default function UserWorkouts() {
                                                 <h3>Sets: {exercise.sets}</h3>
                                             </div>
                                         )
-
                                     })
                                 }
                                 <h3>Calories: {workout.calories}</h3>
