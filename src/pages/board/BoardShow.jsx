@@ -9,13 +9,19 @@ export default function BoardShow() {
     const navigate = useNavigate()
     const { id } = useParams()
     const [data, setData] = useState({})
+    const [exercises, setExercises] = useState([])
     const [comments, setComments] = useState([])
+    const [calories, setCalories] = useState(0)
     const [user, setUser] = useState({})
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         if(!localStorage.isAuth || JSON.parse(localStorage.isAuth) == false) navigate('/login')
-        getPost(id).then(res => setData(res.data))
+        getPost(id).then(res => {
+            setData(res.data)
+            setExercises(res.data.workout.exercises)
+            setCalories(res.data.workout.calories)
+        })
         findUser().then(res => setUser(res.data._id))
     }, [])
 
@@ -37,10 +43,24 @@ export default function BoardShow() {
         navigate('/board')
     }
 
+    console.log(calories)
+
     return (
         <div className='main'>
             <div id = 'post'>
                 <h1>{data.title}</h1>
+                {
+                    exercises.map((exercise, i) => {
+                        return (
+                            <div key = {i}>
+                                <h3>Exercise: {exercise.name}</h3>
+                                <h3>Reps: {exercise.reps}</h3>
+                                <h3>Sets: {exercise.sets}</h3>
+                            </div>
+                        )
+                    })
+                }
+                <h3>Calories: {calories}</h3>
                 <div id = 'context'>
                     <h3>{data.content}</h3>
                 </div>

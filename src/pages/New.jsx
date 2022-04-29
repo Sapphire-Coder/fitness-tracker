@@ -41,7 +41,6 @@ export default function New() {
             calories: e.target.calories.value
         }
         
-        console.log(exercises)
         createWorkout(workout)
         navigate('/')
     }
@@ -60,9 +59,9 @@ export default function New() {
                             return form
                         })
                     }
+                    <button onClick={addForm}>Add Exercise</button>
                     <label>Calories: </label>
                     <input type = 'number' name = 'calories' min = '0' required/>
-                    <button onClick={addForm}>Add Exercise</button>
                     <input type = 'submit' />
                 </form>
             </div>
