@@ -8,11 +8,12 @@ export default function UserWorkouts() {
     const navigate = useNavigate()
 
     const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         if(!localStorage.isAuth || JSON.parse(localStorage.isAuth) == false) navigate('/login')
         getWorkouts().then(res => setData(res.data))
-    }, [])
+    }, [loading])
 
     return (
         <div className = 'main'>
@@ -34,7 +35,10 @@ export default function UserWorkouts() {
                                     })
                                 }
                                 <h3>Calories: {workout.calories}</h3>
-                                <button onClick = {() => deleteWorkout(workout._id)}>Delete Workout</button>
+                                <button onClick = {() => {
+                                    setLoading(true)
+                                    deleteWorkout(workout._id).then(() => setLoading(false))
+                                    }}>Delete Workout</button>
                                 <button onClick = {() => navigate(`/edit/${workout._id}`)}>Edit Workout</button>
                             </div>
                         )
