@@ -23,6 +23,11 @@ export default function Login() {
         e.preventDefault()
         const user = { username: e.target.username.value, password: e.target.password.value }
         loginUser(user).then(() => setLoading(false))
+            .catch(error => {
+                alert(error.response.data)
+                e.target.username.value = null
+                e.target.password.value = null
+            })
     }
 
     return (
