@@ -62,7 +62,16 @@ body{
     text-align: center;
 }
 
+#boardEdit{
+    text-align: center;
+}
+
 #boardNewForm{
+    width: 50%;
+    margin: auto;
+}
+
+#boardEditForm{
     width: 50%;
     margin: auto;
 }

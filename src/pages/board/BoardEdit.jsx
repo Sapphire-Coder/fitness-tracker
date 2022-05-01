@@ -75,7 +75,7 @@ export default function BoardEdit() {
             <Navbar />
             <h1>Edit Post</h1>
             <div id = 'editPostForm' className = 'container'>
-                <form onSubmit = {updPost}>
+                <form id = 'boardEditForm' onSubmit = {updPost}>
                     <div className = 'form-group row'>
                         <label>Title: </label>
                         <input type = 'text' name = 'title' defaultValue = {data.title} required className = 'form-control'/>
