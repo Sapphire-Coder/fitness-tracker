@@ -20,11 +20,11 @@ export default function UserWorkouts() {
         <div className = 'container-fluid' id = 'userShow'>
             <Navbar />
             <h1>Your Workouts</h1>
-            <div className = 'row justify-content-between' id = 'userContainer'>
+            <div className = 'row justify-content-around' id = 'userContainer'>
                 {
                     data.map((workout, i) => {
                         return (
-                            <div key = {i} className = 'col-4 shExercises'>
+                            <div key = {i} className = 'col-4 shExercises rounded'>
                                 <h2>Routine</h2>
                                 {
                                     workout.exercises.map((exercise, j) => {

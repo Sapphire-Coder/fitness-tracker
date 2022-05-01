@@ -57,3 +57,12 @@ body{
     width: 50%;
     margin: auto;
 }
+
+#boardHome{
+    text-align: center;
+}
+
+.boardPosts{
+    height: 33vh;
+    overflow: hidden;
+}

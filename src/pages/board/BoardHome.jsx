@@ -15,15 +15,16 @@ export default function BoardHome() {
     }, [])
 
     return (
-        <div className = 'container-fluid'>
+        <div id = 'boardHome' className = 'container-fluid'>
             <Navbar />
             <h1>Workout Board</h1>
-            <div id = 'boardContainer'>
+            <div id = 'boardContainer' className = 'row justify-content-around'>
                 {
                     data.map((post, i) => {
                         return(
-                            <div key = {i}>
+                            <div key = {i} className = 'boardPosts col-4 rounded'>
                                 <h2><a href = {`/board/${post._id}`}>{post.title}</a></h2>
+                                <h3>{post.content}</h3>
                             </div>
                         )
                     })
