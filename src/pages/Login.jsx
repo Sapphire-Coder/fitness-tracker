@@ -32,7 +32,10 @@ export default function Login() {
 
     return (
         <div className = 'main'>
-            <nav><a href = '/register'>Register</a></nav>
+            <nav className = 'navbar navbar-dark navbar-expand-lg bg-dark'>
+                <a className = 'navbar-brand' href = '/login'>JM Fitness</a>
+                <a className = 'nav-link' href = '/register'>Register</a>
+            </nav>
             <h1>Login</h1>
             <div id = 'loginForm'>
                 <form onSubmit={login}>

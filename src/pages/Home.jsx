@@ -24,7 +24,6 @@ export default function Home() {
             <Navbar />
             <h2>Welcome {user.name}!</h2>
             <h3>What would you like to do today?</h3>
-            <h3><a href = '/new'>Input new workout</a></h3>
         </div>
     )
 }
