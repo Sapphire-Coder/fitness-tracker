@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = props => {
 
@@ -25,7 +25,7 @@ const Navbar = props => {
                     </div>
                 </div>
                         {
-                            loc.pathname == '/board' && (
+                            loc.pathname.split('/')[1] == 'board' && (
                                 <div className = 'nav-item navbar-nav'>
                                     <Link to = '/board/new' className = 'nav-link'>Create Post</Link>
                                 </div>

@@ -54,7 +54,7 @@ export default function New() {
     return (
         <div className = 'container'>
             <Navbar />
-            <div>
+            <div className = 'container'>
                 <form id = 'userWorkout' onSubmit = {newWorkout}>
                     {
                         forms.map(form => {
