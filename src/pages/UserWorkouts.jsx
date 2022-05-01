@@ -17,13 +17,13 @@ export default function UserWorkouts() {
     }, [loading])
 
     return (
-        <div className = 'container'>
+        <div className = 'main'>
             <Navbar />
-            <div id = 'userContainer'>
+            <div className = 'container-fluid' id = 'userContainer'>
                 {
                     data.map((workout, i) => {
                         return (
-                            <div key = {i}>
+                            <div key = {i} className = 'container'>
                                 <h2>Workout {i + 1}</h2>
                                 {
                                     workout.exercises.map((exercise, j) => {

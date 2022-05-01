@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 const Navbar = props => {
 
+    const loc = useLocation()
     const logout = e => {
         e.preventDefault()
         localStorage.clear()
         window.location.reload()
     }
-    
+
     return (
         <nav className='navbar navbar-dark navbar-expand-lg bg-dark fixed-top'>
             <a className='navbar-brand' href = '/'>JM Fitness</a>
@@ -23,6 +24,13 @@ const Navbar = props => {
                         <Link to = '/board' className = 'dropdown-item'>Workout Board</Link>
                     </div>
                 </div>
+                        {
+                            loc.pathname == '/board' && (
+                                <div className = 'nav-item navbar-nav'>
+                                    <Link to = '/board/new' className = 'nav-link'>Create Post</Link>
+                                </div>
+                            )
+                        }
             </div>
             <button onClick={logout} className = 'btn btn-outline-light'>Logout</button>
         </nav>  
