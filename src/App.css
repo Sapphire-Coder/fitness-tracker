@@ -66,3 +66,29 @@ body{
     height: 33vh;
     overflow: hidden;
 }
+
+#boardShow h1{
+    text-align: center;
+}
+
+#calories{
+    text-align: center;
+}
+
+#content{
+    width: 80%;
+    margin: auto;
+}
+
+#commentBox{
+    width: 50%;
+}
+
+#commentBox h4{
+    text-align: center;
+}
+
+.comment{
+    width: 75%;
+    margin: auto;
+}

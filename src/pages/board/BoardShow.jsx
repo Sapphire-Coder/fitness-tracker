@@ -84,60 +84,73 @@ export default function BoardShow() {
     }
 
     return (
-        <div className = 'container'>
+        <div className = 'container' id = 'boardShow'>
             <Navbar />
-            <div id = 'post'>
-                <h1>{data.title}</h1>
-                {
-                    exercises.map((exercise, i) => {
-                        return (
-                            <div key = {i}>
-                                <h3 className = 'exercise'>Exercise: {exercise.name}</h3>
-                                <h3 className = 'reps'>Reps: {exercise.reps}</h3>
-                                <h3 className = 'sets'>Sets: {exercise.sets}</h3>
+            <h1>{data.title}</h1>
+            <div className = 'container-fluid'>
+                <div className = 'row justify-content-around'>
+                    {
+                        exercises.map((exercise, i) => {
+                            return (
+                                <div key = {i} className = 'col-4'>
+                                    <h4 className = 'exercise'>Exercise: {exercise.name}</h4>
+                                    <h4 className = 'reps'>Reps: {exercise.reps}</h4>
+                                    <h4 className = 'sets'>Sets: {exercise.sets}</h4>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                <div className = 'row justify-content-around'>
+                    <h4 id = 'calories' className = 'col-4 align-self-center'>Calories: {calories}</h4>
+                </div>
+                <div className = 'container-fluid'>
+                    <div id = 'content'>
+                        <p>{data.content}</p>
+                    </div>
+                    <div className = 'row justify-content-around'>
+                        <button onClick = {newWorkout} className = 'btn'>Add Workout</button>
+                    </div>
+                    {
+                        user == data.user && (
+                            <div className = 'row justify-content-around'>
+                                <button onClick = {() => navigate(`/board/${id}/edit`)} className = 'btn'>Edit Post</button>
+                                <button onClick = {delPost} className = 'btn'>Delete Post</button>
                             </div>
                         )
-                    })
-                }
-                <h3 id = 'calories'>Calories: {calories}</h3>
-                <div id = 'context'>
-                    <h3>{data.content}</h3>
-                    <button onClick = {newWorkout}>Add Workout</button>
+                    }
                 </div>
-                {
-                    user == data.user && (
-                        <div>
-                            <button onClick = {() => navigate(`/board/${id}/edit`)}>Edit Post</button>
-                            <button onClick = {delPost}>Delete Post</button>
-                        </div>
-                    )
-                }
             </div>
-            <div id = 'commentSection'>
+            <div id = 'commentSection' className = 'container'>
                 {
                     comments.map((comment, i) => {
                         return (
-                            <div key = {i} className = 'comment'>
-                                <h3 style={{textDecorationLine: 'underline'}}>Username:</h3>
-                                <h3>{comment.username}</h3>
-                                <p style={{textDecorationLine: 'underline'}}>Comment:</p>
+                            <div key = {i} className = 'conatiner-fluid comment'>
+                                <h4 style={{textDecorationLine: 'underline'}}>Username:</h4>
+                                <h5>{comment.username}</h5>
+                                <h5 style={{textDecorationLine: 'underline'}}>Comment:</h5>
                                 <p>{comment.comment}</p>
                                 {
                                     user == comment.user && <button onClick = {e => {
                                         e.preventDefault()
                                         setLoading(true)
                                         deleteComment(comment._id).then(() => setLoading(false))
-                                    }}>Delete Comment</button> 
+                                    }} className = 'btn'>Delete Comment</button> 
                                 }
                             </div>
                         )
                     })
                 }
-                <div id = 'commentBox'>
+                <div id = 'commentBox' className = 'container'>
+                    <h4>Add a comment</h4>
                     <form onSubmit={addComment}>
-                        <label>Add Comment: </label>
-                        <textarea name = 'comment' cols = '40' rows = '10' required ></textarea>
-                        <input type = 'submit'/>
+                        <div className = 'form-group row'>
+                            <label>Add Comment: </label>
+                            <textarea name = 'comment' cols = '40' rows = '5' placeholder = 'comment' required className = 'form-control'></textarea>
+                        </div>
+                        <div className = 'row justify-content-around'>
+                            <input type = 'submit' className = 'btn'/>
+                        </div>
                     </form>
                 </div>
             </div>
