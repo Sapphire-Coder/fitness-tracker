@@ -13,20 +13,26 @@ export default function Register() {
     }
 
     return (
-        <div className = 'container'>
+        <div className = 'container' id = 'register'>
             <nav className = 'navbar navbar-dark navbar-expand-lg bg-dark fixed-top'>
                 <a className = 'navbar-brand' href = '/login'>JM Fitness</a>
             </nav>
             <h1>Create an Account</h1>
             <div id = 'createForm'>
                 <form onSubmit={newAcc}>
-                    <label>Username: </label>
-                    <input type = 'text' name = 'username' required />
-                    <label>Password: </label>
-                    <input type = 'password' name = 'password' required />
-                    <label>Name: </label>
-                    <input type = 'text' name = 'name' required />
-                    <input type = 'submit' />
+                    <div className = 'form-group row'>
+                        <label>Username: </label>
+                        <input type = 'text' name = 'username' placeholder = 'username' required className = 'form-control'/>
+                    </div>
+                    <div className = 'form-group row'>
+                        <label>Password: </label>
+                        <input type = 'password' name = 'password' placeholder = 'password' required className = 'form-control'/>
+                    </div>
+                    <div className = 'form-group row'>
+                        <label>Name: </label>
+                        <input type = 'text' name = 'name' placeholder = 'name' required className = 'form-control'/>
+                    </div>
+                    <input type = 'submit' className = 'btn'/>
                 </form>
             </div>
         </div>

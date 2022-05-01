@@ -1,3 +1,21 @@
 body{
     padding-top: 70px
 }
+
+#register{
+    text-align: center;
+}
+
+#createForm{
+    width: 50%;
+    margin: auto;
+}
+
+#login{
+    text-align: center;
+}
+
+#loginForm{
+    width: 50%;
+    margin: auto;
+}
