@@ -19,3 +19,12 @@ body{
     width: 50%;
     margin: auto;
 }
+
+#new{
+    text-align: center;
+}
+
+#newWorkout{
+    width: 50%;
+    margin: auto
+}
