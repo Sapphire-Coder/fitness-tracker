@@ -25,9 +25,18 @@ body{
     text-align: center;
 }
 
+#edit{
+    text-align: center;
+}
+
 #newWorkout{
     width: 50%;
     margin: auto
+}
+
+#editWorkout{
+    width: 50%;
+    margin: auto;
 }
 
 #userShow h1{
@@ -91,4 +100,8 @@ body{
 .comment{
     width: 75%;
     margin: auto;
+}
+
+#boardEdit h1{
+    text-align: center;
 }

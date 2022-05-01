@@ -62,19 +62,22 @@ export default function Edit() {
     }
 
     return (
-        <div className = 'container'>
+        <div id = 'edit'>
             <Navbar />
-            <div>
+            <h1>Edit Workout</h1>
+            <div className = 'container'>
                 <form id = 'editWorkout' onSubmit = {updWorkout}>
                     {
                         forms.map(form => {
                             return form
                         })
                     }
-                    <label>Calories: </label>
-                    <input type = 'number' name = 'calories' min = '0' defaultValue = {data.calories}/>
-                    <button onClick={addForm}>Add Exercise</button>
-                    <input type = 'submit' />
+                    <button onClick={addForm} className = 'btn'>Add Exercise</button>
+                    <div className = 'form-group row'>
+                        <label>Calories: </label>
+                        <input type = 'number' name = 'calories' min = '0' defaultValue = {data.calories} className = 'form-control'/>
+                    </div>
+                    <input type = 'submit' className = 'btn'/>
                 </form>
             </div>
         </div>

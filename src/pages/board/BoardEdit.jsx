@@ -71,24 +71,30 @@ export default function BoardEdit() {
     }
 
     return (
-        <div className = 'container'>
+        <div id = 'boardEdit'>
             <Navbar />
             <h1>Edit Post</h1>
-            <div id = 'newPostForm'>
+            <div id = 'editPostForm' className = 'container'>
                 <form onSubmit = {updPost}>
-                <label>Title: </label>
-                    <input type = 'text' name = 'title' defaultValue = {data.title} required />
+                    <div className = 'form-group row'>
+                        <label>Title: </label>
+                        <input type = 'text' name = 'title' defaultValue = {data.title} required className = 'form-control'/>
+                    </div>
                     {
                         forms.map(form => {
                             return form
                         })
                     }
-                    <button onClick={addForm}>Add Exercise</button>
-                    <label>Calories: </label>
-                    <input type = 'number' name = 'calories' min = '0' defaultValue = {calories} required/>
-                    <label>Post: </label>
-                    <textarea name = 'content' cols = '80' rows = '20' defaultValue = {data.content} required ></textarea>
-                    <input type = 'submit'/>
+                    <button onClick={addForm} className = 'btn'>Add Exercise</button>
+                    <div className = 'form-group row'>
+                        <label>Calories: </label>
+                        <input type = 'number' name = 'calories' min = '0' defaultValue = {calories} required className = 'form-control'/>
+                    </div>
+                    <div className = 'form-group row'>
+                        <label>Post: </label>
+                        <textarea name = 'content' cols = '80' rows = '20' defaultValue = {data.content} required className = 'form-control'></textarea>
+                    </div>
+                    <input type = 'submit' className = 'btn'/>
                 </form>
             </div>
         </div>
