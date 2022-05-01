@@ -84,7 +84,7 @@ export default function BoardShow() {
     }
 
     return (
-        <div className='main'>
+        <div className = 'container'>
             <Navbar />
             <div id = 'post'>
                 <h1>{data.title}</h1>

@@ -56,7 +56,7 @@ export default function BoardNew() {
     }
 
     return (
-        <div className = 'main'>
+        <div className = 'container'>
             <Navbar />
             <h1>Create a new post</h1>
             <div id = 'newPostForm'>

@@ -15,7 +15,7 @@ export default function BoardHome() {
     }, [])
 
     return (
-        <div className = 'main'>
+        <div className = 'container'>
             <Navbar />
             <h1>Workout Board</h1>
             <h3><a href = '/board/new'>Create Post</a></h3>

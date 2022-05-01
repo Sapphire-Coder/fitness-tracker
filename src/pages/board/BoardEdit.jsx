@@ -71,7 +71,7 @@ export default function BoardEdit() {
     }
 
     return (
-        <div className = 'main'>
+        <div className = 'container'>
             <Navbar />
             <h1>Edit Post</h1>
             <div id = 'newPostForm'>

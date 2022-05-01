@@ -17,7 +17,7 @@ export default function UserWorkouts() {
     }, [loading])
 
     return (
-        <div className = 'main'>
+        <div className = 'container'>
             <Navbar />
             <div id = 'userContainer'>
                 {

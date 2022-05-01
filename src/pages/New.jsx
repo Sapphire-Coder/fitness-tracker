@@ -52,7 +52,7 @@ export default function New() {
     }
 
     return (
-        <div className = 'main'>
+        <div className = 'container'>
             <Navbar />
             <div>
                 <form id = 'userWorkout' onSubmit = {newWorkout}>

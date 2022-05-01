@@ -31,10 +31,12 @@ export default function Login() {
     }
 
     return (
-        <div className = 'main'>
-            <nav className = 'navbar navbar-dark navbar-expand-lg bg-dark'>
+        <div className = 'container'>
+            <nav className = 'navbar navbar-dark navbar-expand-lg bg-dark fixed-top'>
                 <a className = 'navbar-brand' href = '/login'>JM Fitness</a>
-                <a className = 'nav-link' href = '/register'>Register</a>
+                <div className = 'nav-item navbar-nav'>
+                    <a className = 'nav-link' href = '/register'>Register</a>
+                </div>
             </nav>
             <h1>Login</h1>
             <div id = 'loginForm'>

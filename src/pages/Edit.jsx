@@ -62,7 +62,7 @@ export default function Edit() {
     }
 
     return (
-        <div className = 'main'>
+        <div className = 'container'>
             <Navbar />
             <div>
                 <form id = 'editWorkout' onSubmit = {updWorkout}>

@@ -13,7 +13,10 @@ export default function Register() {
     }
 
     return (
-        <div className = 'main'>
+        <div className = 'container'>
+            <nav className = 'navbar navbar-dark navbar-expand-lg bg-dark fixed-top'>
+                <a className = 'navbar-brand' href = '/login'>JM Fitness</a>
+            </nav>
             <h1>Create an Account</h1>
             <div id = 'createForm'>
                 <form onSubmit={newAcc}>

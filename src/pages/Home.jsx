@@ -20,7 +20,7 @@ export default function Home() {
 
 
     return (
-        <div className = 'main'>
+        <div className = 'container'>
             <Navbar />
             <h2>Welcome {user.name}!</h2>
             <h3>What would you like to do today?</h3>
