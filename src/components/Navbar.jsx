@@ -24,7 +24,7 @@ const Navbar = props => {
                     </div>
                 </div>
             </div>
-            <button onClick={logout}>Logout</button>
+            <button onClick={logout} className = 'btn btn-outline-light'>Logout</button>
         </nav>  
     )
 }
