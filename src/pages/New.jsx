@@ -43,7 +43,7 @@ export default function New() {
         }
         
         createWorkout(workout)
-        navigate('/')
+        navigate('/workouts')
     }
 
     const addForm = e => {
@@ -54,8 +54,8 @@ export default function New() {
     return (
         <div id = 'new'>
             <Navbar />
+            <h1>Create Workout</h1>
             <div className = 'container'>
-                <h1>Create Workout</h1>
                 <form id = 'newWorkout' onSubmit = {newWorkout}>
                     {
                         forms.map(form => {

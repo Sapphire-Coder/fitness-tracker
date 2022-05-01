@@ -17,31 +17,38 @@ export default function UserWorkouts() {
     }, [loading])
 
     return (
-        <div className = 'main'>
+        <div className = 'container-fluid' id = 'userShow'>
             <Navbar />
-            <div className = 'container-fluid' id = 'userContainer'>
+            <h1>Your Workouts</h1>
+            <div className = 'row justify-content-between' id = 'userContainer'>
                 {
                     data.map((workout, i) => {
                         return (
-                            <div key = {i} className = 'container'>
-                                <h2>Workout {i + 1}</h2>
+                            <div key = {i} className = 'col-4 shExercises'>
+                                <h2>Routine</h2>
                                 {
                                     workout.exercises.map((exercise, j) => {
                                         return (
                                             <div key = {j}>
-                                                <h3>Exercise: {exercise.name}</h3>
-                                                <h3>Reps: {exercise.reps}</h3>
-                                                <h3>Sets: {exercise.sets}</h3>
+                                                <h4 className = 'col-8'>Exercise: {exercise.name}</h4>
+                                                <h4 className = 'col-8'>Reps: {exercise.reps}</h4>
+                                                <h4 className = 'col-8'>Sets: {exercise.sets}</h4>
                                             </div>
                                         )
                                     })
                                 }
-                                <h3>Calories: {workout.calories}</h3>
-                                <button onClick = {() => {
-                                    setLoading(true)
-                                    deleteWorkout(workout._id).then(() => setLoading(false))
-                                    }}>Delete Workout</button>
-                                <button onClick = {() => navigate(`/edit/${workout._id}`)}>Edit Workout</button>
+                                <h4 className = 'col-8'>Calories: {workout.calories}</h4>
+                                <div className = 'row justify-content-around'>
+                                    <div>
+                                        <button onClick = {() => {
+                                        setLoading(true)
+                                        deleteWorkout(workout._id).then(() => setLoading(false))
+                                        }} className = 'btn'>Delete Workout</button>
+                                    </div>
+                                    <div>
+                                        <button onClick = {() => navigate(`/edit/${workout._id}`)} className = 'btn'>Edit Workout</button>
+                                    </div>
+                                </div>
                             </div>
                         )
                     })

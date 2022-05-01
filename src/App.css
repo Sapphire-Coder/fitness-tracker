@@ -28,3 +28,22 @@ body{
     width: 50%;
     margin: auto
 }
+
+#userShow h1{
+    text-align: center;
+}
+
+.shExercises{
+    border-style: double;
+    width: 800px;
+    height: 50vh;
+    overflow: scroll;
+}
+
+.shExercises::-webkit-scrollbar{
+    display: none;
+}
+
+.shExercises h2{
+    text-align: center;
+}
