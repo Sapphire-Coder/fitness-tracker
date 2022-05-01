@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createWorkout } from '../services/workouts-api'
 import NewForm from '../components/NewForm'
+import Navbar from '../components/Navbar'
 
 export default function New() {
 
@@ -52,6 +53,7 @@ export default function New() {
 
     return (
         <div className = 'main'>
+            <Navbar />
             <div>
                 <form id = 'userWorkout' onSubmit = {newWorkout}>
                     {

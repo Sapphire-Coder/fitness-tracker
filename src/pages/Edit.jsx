@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { getWorkout, updateWorkout } from '../services/workouts-api'
 import NewForm from '../components/NewForm'
 import EditForm from '../components/EditForm'
+import Navbar from '../components/Navbar'
 
 export default function Edit() {
 
@@ -62,6 +63,7 @@ export default function Edit() {
 
     return (
         <div className = 'main'>
+            <Navbar />
             <div>
                 <form id = 'editWorkout' onSubmit = {updWorkout}>
                     {

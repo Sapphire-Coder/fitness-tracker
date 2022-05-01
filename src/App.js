@@ -21,14 +21,6 @@ const App = () => {
 
     return (
         <Router>
-            {localStorage.isAuth && JSON.parse(localStorage.isAuth) === true ? (
-                <nav>
-                    <Link to = '/'>Home </Link>
-                    <Link to = '/workouts'>Workouts </Link>
-                    <Link to = '/board'>Workout Board </Link>
-                    <button onClick={logout}>Logout</button>
-                </nav>   
-            ) : null }
             <Routes>
                 <Route path = '/' element = { <Home /> } />
                 <Route path = '/login' element = { <Login /> } />

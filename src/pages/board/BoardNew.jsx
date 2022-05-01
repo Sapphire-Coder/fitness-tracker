@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createPost } from '../../services/posts-api'
 import NewForm from '../../components/NewForm'
+import Navbar from '../../components/Navbar'
 
 export default function BoardNew() {
 
@@ -56,6 +57,7 @@ export default function BoardNew() {
 
     return (
         <div className = 'main'>
+            <Navbar />
             <h1>Create a new post</h1>
             <div id = 'newPostForm'>
                 <form onSubmit = {newPost}>

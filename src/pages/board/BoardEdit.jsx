@@ -3,13 +3,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts-api'
 import NewForm from '../../components/NewForm'
 import EditForm from '../../components/EditForm'
+import Navbar from '../../components/Navbar'
 
 export default function BoardEdit() {
 
     const navigate = useNavigate()
     const { id } = useParams()
     const [data, setData] = useState({})
-    const [calories, setCalories] = useState(0)
+    const [calories, setCalories] = useState(null)
     const [forms, setForms] = useState([])
 
     useEffect(() => {
@@ -71,6 +72,7 @@ export default function BoardEdit() {
 
     return (
         <div className = 'main'>
+            <Navbar />
             <h1>Edit Post</h1>
             <div id = 'newPostForm'>
                 <form onSubmit = {updPost}>
@@ -83,7 +85,7 @@ export default function BoardEdit() {
                     }
                     <button onClick={addForm}>Add Exercise</button>
                     <label>Calories: </label>
-                    <input type = 'number' name = 'calories' min = '0' defaultValue = {calories}required/>
+                    <input type = 'number' name = 'calories' min = '0' defaultValue = {calories} required/>
                     <label>Post: </label>
                     <textarea name = 'content' cols = '80' rows = '20' defaultValue = {data.content} required ></textarea>
                     <input type = 'submit'/>

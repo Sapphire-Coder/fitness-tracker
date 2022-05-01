@@ -32,9 +32,9 @@ export default function Login() {
 
     return (
         <div className = 'main'>
+            <nav><a href = '/register'>Register</a></nav>
             <h1>Login</h1>
             <div id = 'loginForm'>
-                <h2><a href = '/register'>Create an Account</a></h2>
                 <form onSubmit={login}>
                     <label>Username: </label>
                     <input type = 'text' name = 'username' />

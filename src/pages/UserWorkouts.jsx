@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getWorkouts } from '../services/workouts-api'
 import { useNavigate } from 'react-router-dom'
 import { deleteWorkout } from '../services/workouts-api'
+import Navbar from '../components/Navbar'
 
 export default function UserWorkouts() {
 
@@ -17,6 +18,7 @@ export default function UserWorkouts() {
 
     return (
         <div className = 'main'>
+            <Navbar />
             <div id = 'userContainer'>
                 {
                     data.map((workout, i) => {

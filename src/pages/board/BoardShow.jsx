@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import Navbar from '../../components/Navbar'
 import { getComments, createComment, deleteComment } from '../../services/comments-api'
 import { deletePost, getPost } from '../../services/posts-api'
 import { findUser } from '../../services/users-api'
@@ -84,6 +85,7 @@ export default function BoardShow() {
 
     return (
         <div className='main'>
+            <Navbar />
             <div id = 'post'>
                 <h1>{data.title}</h1>
                 {

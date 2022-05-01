@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Navbar from "../components/Navbar"
 import { findUser } from "../services/users-api"
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
 
     return (
         <div className = 'main'>
+            <Navbar />
             <h2>Welcome {user.name}!</h2>
             <h3>What would you like to do today?</h3>
             <h3><a href = '/new'>Input new workout</a></h3>
