@@ -1,5 +1,6 @@
 body{
-    padding-top: 70px
+    padding-top: 70px;
+    padding-bottom: 20px;
 }
 
 #register{
@@ -46,4 +47,13 @@ body{
 
 .shExercises h2{
     text-align: center;
+}
+
+#boardNew{
+    text-align: center;
+}
+
+#boardNewForm{
+    width: 50%;
+    margin: auto;
 }

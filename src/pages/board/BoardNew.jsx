@@ -56,24 +56,30 @@ export default function BoardNew() {
     }
 
     return (
-        <div className = 'container'>
+        <div id = 'boardNew'>
             <Navbar />
             <h1>Create a new post</h1>
-            <div id = 'newPostForm'>
-                <form onSubmit = {newPost}>
-                <label>Title: </label>
-                    <input type = 'text' name = 'title' required />
+            <div id = 'newPostForm' className = 'container'>
+                <form id = 'boardNewForm' onSubmit = {newPost}>
+                    <div className = 'form-group row'>
+                        <label>Title: </label>
+                        <input type = 'text' name = 'title' placeholder = 'title' required className = 'form-control'/>
+                    </div>
                     {
                         forms.map(form => {
                             return form
                         })
                     }
-                    <button onClick={addForm}>Add Exercise</button>
-                    <label>Calories: </label>
-                    <input type = 'number' name = 'calories' min = '0' required/>
-                    <label>Post: </label>
-                    <textarea name = 'content' cols = '80' rows = '20' required ></textarea>
-                    <input type = 'submit'/>
+                    <button onClick={addForm} className = 'btn'>Add Exercise</button>
+                    <div className = 'form-group row'>
+                        <label>Calories: </label>
+                        <input type = 'number' name = 'calories' min = '0' required className = 'form-control'/>
+                    </div>
+                    <div className = 'form-group row'>
+                        <label>Post: </label>
+                        <textarea name = 'content' cols = '80' rows = '10' required className = 'form-control'/>
+                    </div>
+                    <input type = 'submit' className = 'btn'/>
                 </form>
             </div>
         </div>
