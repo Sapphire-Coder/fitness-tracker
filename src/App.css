@@ -48,6 +48,8 @@ body{
     width: 800px;
     height: 50vh;
     overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .shExercises::-webkit-scrollbar{

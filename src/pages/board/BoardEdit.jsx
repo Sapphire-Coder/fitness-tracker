@@ -92,7 +92,7 @@ export default function BoardEdit() {
                     </div>
                     <div className = 'form-group row'>
                         <label>Post: </label>
-                        <textarea name = 'content' cols = '80' rows = '20' defaultValue = {data.content} required className = 'form-control'></textarea>
+                        <textarea name = 'content' cols = '80' rows = '10' defaultValue = {data.content} required className = 'form-control'></textarea>
                     </div>
                     <input type = 'submit' className = 'btn'/>
                 </form>
