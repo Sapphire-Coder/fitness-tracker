@@ -25,4 +25,4 @@ In order to use the application, one can navigate to the provided link above to 
 3. Install the needed packages using `npm install`
 4. Start the application using `npm start`
 
-[^1]Background photo by Henry Lim on Unsplash.
+[^1]: Background photo by Henry Lim on Unsplash.
