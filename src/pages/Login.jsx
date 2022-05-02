@@ -31,7 +31,7 @@ export default function Login() {
     }
 
     return (
-        <div className = 'container' id = 'login'>
+        <div className = 'container rounded' id = 'login'>
             <nav className = 'navbar navbar-dark navbar-expand-lg bg-dark fixed-top'>
                 <a className = 'navbar-brand' href = '/login'>JM Fitness</a>
                 <div className = 'nav-item navbar-nav'>
@@ -49,7 +49,7 @@ export default function Login() {
                         <label>Password: </label>
                         <input type = 'password' name = 'password' placeholder = 'password' required className = 'form-control'/>
                     </div>
-                    <input type = 'submit' className = 'btn'/>
+                    <input type = 'submit' className = 'btn btn-info'/>
                 </form>
             </div>
         </div>

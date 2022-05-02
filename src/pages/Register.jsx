@@ -13,7 +13,7 @@ export default function Register() {
     }
 
     return (
-        <div className = 'container' id = 'register'>
+        <div className = 'container rounded' id = 'register'>
             <nav className = 'navbar navbar-dark navbar-expand-lg bg-dark fixed-top'>
                 <a className = 'navbar-brand' href = '/login'>JM Fitness</a>
             </nav>
@@ -32,7 +32,7 @@ export default function Register() {
                         <label>Name: </label>
                         <input type = 'text' name = 'name' placeholder = 'name' required className = 'form-control'/>
                     </div>
-                    <input type = 'submit' className = 'btn'/>
+                    <input type = 'submit' className = 'btn btn-info'/>
                 </form>
             </div>
         </div>

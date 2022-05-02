@@ -52,22 +52,22 @@ export default function New() {
     }
 
     return (
-        <div id = 'new'>
+        <div className = 'container rounded' id = 'new'>
             <Navbar />
             <h1>Create Workout</h1>
             <div className = 'container'>
-                <form id = 'newWorkout' onSubmit = {newWorkout}>
+                <form className = 'rounded' id = 'newWorkout' onSubmit = {newWorkout}>
                     {
                         forms.map(form => {
                             return form
                         })
                     }
-                    <button onClick={addForm} className = 'btn'>Add Exercise</button> <br/>
+                    <button onClick={addForm} className = 'btn btn-info'>Add Exercise</button> <br/>
                     <div className = 'form-group row'>
                         <label>Calories: </label>
                         <input type = 'number' name = 'calories' min = '0' placeholder = 'calories' required className = 'form-control'/>
                     </div>
-                    <input type = 'submit' className = 'btn'/>
+                    <input type = 'submit' className = 'btn btn-info'/>
                 </form>
             </div>
         </div>

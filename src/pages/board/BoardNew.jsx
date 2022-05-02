@@ -56,7 +56,7 @@ export default function BoardNew() {
     }
 
     return (
-        <div id = 'boardNew'>
+        <div className = 'container rounded' id = 'boardNew'>
             <Navbar />
             <h1>Create a new post</h1>
             <div id = 'newPostForm' className = 'container'>
@@ -70,7 +70,7 @@ export default function BoardNew() {
                             return form
                         })
                     }
-                    <button onClick={addForm} className = 'btn'>Add Exercise</button>
+                    <button onClick={addForm} className = 'btn btn-info'>Add Exercise</button>
                     <div className = 'form-group row'>
                         <label>Calories: </label>
                         <input type = 'number' name = 'calories' min = '0' required className = 'form-control'/>
@@ -79,7 +79,7 @@ export default function BoardNew() {
                         <label>Post: </label>
                         <textarea name = 'content' cols = '80' rows = '10' required className = 'form-control'/>
                     </div>
-                    <input type = 'submit' className = 'btn'/>
+                    <input type = 'submit' className = 'btn btn-info'/>
                 </form>
             </div>
         </div>

@@ -43,10 +43,10 @@ export default function UserWorkouts() {
                                         <button onClick = {() => {
                                         setLoading(true)
                                         deleteWorkout(workout._id).then(() => setLoading(false))
-                                        }} className = 'btn'>Delete Workout</button>
+                                        }} className = 'btn btn-info'>Delete Workout</button>
                                     </div>
                                     <div>
-                                        <button onClick = {() => navigate(`/edit/${workout._id}`)} className = 'btn'>Edit Workout</button>
+                                        <button onClick = {() => navigate(`/edit/${workout._id}`)} className = 'btn btn-info'>Edit Workout</button>
                                     </div>
                                 </div>
                             </div>

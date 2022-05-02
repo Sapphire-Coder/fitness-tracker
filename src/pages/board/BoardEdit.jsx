@@ -71,7 +71,7 @@ export default function BoardEdit() {
     }
 
     return (
-        <div id = 'boardEdit'>
+        <div className = 'container rounded' id = 'boardEdit'>
             <Navbar />
             <h1>Edit Post</h1>
             <div id = 'editPostForm' className = 'container'>
@@ -85,7 +85,7 @@ export default function BoardEdit() {
                             return form
                         })
                     }
-                    <button onClick={addForm} className = 'btn'>Add Exercise</button>
+                    <button onClick={addForm} className = 'btn btn-info'>Add Exercise</button>
                     <div className = 'form-group row'>
                         <label>Calories: </label>
                         <input type = 'number' name = 'calories' min = '0' defaultValue = {calories} required className = 'form-control'/>
@@ -94,7 +94,7 @@ export default function BoardEdit() {
                         <label>Post: </label>
                         <textarea name = 'content' cols = '80' rows = '10' defaultValue = {data.content} required className = 'form-control'></textarea>
                     </div>
-                    <input type = 'submit' className = 'btn'/>
+                    <input type = 'submit' className = 'btn btn-info'/>
                 </form>
             </div>
         </div>

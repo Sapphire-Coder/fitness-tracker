@@ -84,7 +84,7 @@ export default function BoardShow() {
     }
 
     return (
-        <div className = 'container' id = 'boardShow'>
+        <div className = 'container rounded' id = 'boardShow'>
             <Navbar />
             <h1>{data.title}</h1>
             <div className = 'container-fluid'>
@@ -109,13 +109,13 @@ export default function BoardShow() {
                         <p>{data.content}</p>
                     </div>
                     <div className = 'row justify-content-around'>
-                        <button onClick = {newWorkout} className = 'btn'>Add Workout</button>
+                        <button onClick = {newWorkout} className = 'btn btn-info'>Add Workout</button>
                     </div>
                     {
                         user == data.user && (
                             <div className = 'row justify-content-around'>
-                                <button onClick = {() => navigate(`/board/${id}/edit`)} className = 'btn'>Edit Post</button>
-                                <button onClick = {delPost} className = 'btn'>Delete Post</button>
+                                <button onClick = {() => navigate(`/board/${id}/edit`)} className = 'btn btn-info'>Edit Post</button>
+                                <button onClick = {delPost} className = 'btn btn-info'>Delete Post</button>
                             </div>
                         )
                     }
@@ -135,7 +135,7 @@ export default function BoardShow() {
                                         e.preventDefault()
                                         setLoading(true)
                                         deleteComment(comment._id).then(() => setLoading(false))
-                                    }} className = 'btn'>Delete Comment</button> 
+                                    }} className = 'btn btn-info'>Delete Comment</button> 
                                 }
                             </div>
                         )
@@ -149,7 +149,7 @@ export default function BoardShow() {
                             <textarea name = 'comment' cols = '40' rows = '5' placeholder = 'comment' required className = 'form-control'></textarea>
                         </div>
                         <div className = 'row justify-content-around'>
-                            <input type = 'submit' className = 'btn'/>
+                            <input type = 'submit' className = 'btn btn-info'/>
                         </div>
                     </form>
                 </div>

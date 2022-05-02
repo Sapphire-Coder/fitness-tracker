@@ -1,10 +1,17 @@
 body{
     padding-top: 70px;
     padding-bottom: 20px;
+    background-image: url('./images/henry-lim-b1x3JGmF-ps-unsplash.jpg');
+    background-size: cover;
+    color: rgb(154, 213, 202);
 }
 
 #register{
     text-align: center;
+    width: 50%;
+    padding: 20px;
+    border-style: ridge;
+    background-color: rgb(40, 75, 99, 0.5);
 }
 
 #createForm{
@@ -14,6 +21,10 @@ body{
 
 #login{
     text-align: center;
+    width: 50%;
+    padding: 20px;
+    border-style: ridge;
+    background-color: rgb(40, 75, 99, 0.5);
 }
 
 #loginForm{
@@ -23,15 +34,23 @@ body{
 
 #new{
     text-align: center;
+    width: 50%;
+    padding: 20px;
+    border-style: ridge;
+    background-color: rgb(40, 75, 99, 0.5);
 }
 
 #edit{
     text-align: center;
+    width: 50%;
+    padding: 20px;
+    border-style: ridge;
+    background-color: rgb(40, 75, 99, 0.5);
 }
 
 #newWorkout{
     width: 50%;
-    margin: auto
+    margin: auto;
 }
 
 #editWorkout{
@@ -44,12 +63,13 @@ body{
 }
 
 .shExercises{
-    border-style: double;
+    border-style: ridge;
     width: 800px;
     height: 50vh;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    background-color: rgb(40, 75, 99, 0.5);
 }
 
 .shExercises::-webkit-scrollbar{
@@ -62,10 +82,18 @@ body{
 
 #boardNew{
     text-align: center;
+    width: 50%;
+    padding: 20px;
+    border-style: ridge;
+    background-color: rgb(40, 75, 99, 0.5);
 }
 
 #boardEdit{
     text-align: center;
+    width: 50%;
+    padding: 20px;
+    border-style: ridge;
+    background-color: rgb(40, 75, 99, 0.5);
 }
 
 #boardNewForm{
@@ -85,6 +113,14 @@ body{
 .boardPosts{
     height: 33vh;
     overflow: hidden;
+    border-style: ridge;
+    background-color: rgb(40, 75, 99, 0.5);
+}
+
+#boardShow{
+    padding: 20px;
+    border-style: ridge;
+    background-color: rgb(40, 75, 99, 0.5);
 }
 
 #boardShow h1{

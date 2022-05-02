@@ -62,7 +62,7 @@ export default function Edit() {
     }
 
     return (
-        <div id = 'edit'>
+        <div className = 'container rounded' id = 'edit'>
             <Navbar />
             <h1>Edit Workout</h1>
             <div className = 'container'>
@@ -72,12 +72,12 @@ export default function Edit() {
                             return form
                         })
                     }
-                    <button onClick={addForm} className = 'btn'>Add Exercise</button>
+                    <button onClick={addForm} className = 'btn btn-info'>Add Exercise</button>
                     <div className = 'form-group row'>
                         <label>Calories: </label>
                         <input type = 'number' name = 'calories' min = '0' defaultValue = {data.calories} className = 'form-control'/>
                     </div>
-                    <input type = 'submit' className = 'btn'/>
+                    <input type = 'submit' className = 'btn btn-info'/>
                 </form>
             </div>
         </div>
