@@ -117,6 +117,10 @@ body{
     background-color: rgb(40, 75, 99, 0.5);
 }
 
+.boardPosts a{
+    color: rgb(255, 209, 186);
+}
+
 #boardShow{
     padding: 20px;
     border-style: ridge;

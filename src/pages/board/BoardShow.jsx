@@ -108,9 +108,6 @@ export default function BoardShow() {
                     <div id = 'content'>
                         <p>{data.content}</p>
                     </div>
-                    <div className = 'row justify-content-around'>
-                        <button onClick = {newWorkout} className = 'btn btn-info'>Add Workout</button>
-                    </div>
                     {
                         user == data.user && (
                             <div className = 'row justify-content-around'>
@@ -119,6 +116,9 @@ export default function BoardShow() {
                             </div>
                         )
                     }
+                    <div className = 'row justify-content-around'>
+                        <button onClick = {newWorkout} className = 'btn btn-info'>Add Workout</button>
+                    </div>
                 </div>
             </div>
             <div id = 'commentSection' className = 'container'>
