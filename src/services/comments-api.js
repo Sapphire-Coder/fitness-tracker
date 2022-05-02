@@ -1,7 +1,7 @@
 import axios from 'axios'
 import authHeader from './auth-header'
 
-const URL = 'http://localhost:3001/comments/'
+const URL = 'https://jmfitness-api.herokuapp.com/comments/'
 
 export const getComments = id => {
     return axios.get(`${URL}${id}`, { headers: authHeader() })

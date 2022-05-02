@@ -1,7 +1,7 @@
 import axios from 'axios'
 import authHeader from './auth-header'
 
-const URL = 'http://localhost:3001/posts/'
+const URL = 'https://jmfitness-api.herokuapp.com/posts/'
 
 export const getPosts = () => {
     return axios.get(URL, { headers: authHeader() })

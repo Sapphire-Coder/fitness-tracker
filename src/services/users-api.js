@@ -1,7 +1,7 @@
 import axios from 'axios'
 import authHeader from './auth-header'
 
-const URL = 'http://localhost:3001/users/'
+const URL = 'https://jmfitness-api.herokuapp.com/users/'
 
 export const createAccount = createdUser => {
     return axios.post(URL, createdUser)
